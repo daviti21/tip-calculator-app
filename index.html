@@ -16,7 +16,7 @@
                 <p class="money-tit">Bill</p>
                 <div class="money-box">
                     <img src="icon-dollar.svg" class="dollar">
-                    <input type="text" inputmode="numeric" pattern="[0-9]*" class="dol-inp">
+                    <input type="text" inputmode="numeric" pattern="[0-9]*" class="dol-inp" value="0,00" readonly>
                 </div>
             </div>
             <div class="tip">
@@ -27,35 +27,40 @@
                     <button type="submit" class="tup-btn" id="btn15">15%</button>
                     <button type="submit" class="tup-btn" id="btn25">25%</button>
                     <button type="submit" class="tup-btn" id="btn50">50%</button>
-                    <button type="submit" class="custom-btn" id="custom">Custom</button>
-
+                      <input type="text" inputmode="numeric" pattern="[0-9]*" class="custom" placeholder="Custom" >
                 </div>
             </div>
             <div class="people">
+                <div class="pepText-box">
                 <p class="pep-tit">Number of People</p>
+                <p class="err-txt">Cant't be zero</p>
+                </div>
                 <div class="pep-box">
                     <img src="icon-person.svg">
-                    <input type="text" inputmode="numeric" pattern="[0-9]*" class="pepNum">
+                    <input type="text" inputmode="numeric" pattern="[0-9]*" class="pepNum" value="0">
                 </div>
             </div>
 </div>
 <div class="right">
+    <div class="input-box">
     <div class="amount">
         <div class="left-amount">
             <p class="right-tit">Tip Amount</p>
             <p class="per-txt">/ person</p>
         </div>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" placeholder="$0.00">
+        <input type="text" inputmode="numeric" pattern="[0-9]*"  value="0.00" class="am-inp" readonly>
     </div>
     <div class="total">
          <div class="left-tot">
-            <p class="right-tit">Tip Amount</p>
+            <p class="right-tit">Total</p>
             <p class="per-txt">/ person</p>
         </div>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" placeholder="$0.00">
+        <input  type="text" inputmode="numeric" pattern="[0-9]*"  value="0.00" class="to-inp" readonly>
     </div>
     </div>
-    <button type="button" class="reset">RESET</button>
+     <button type="button" class="reset">RESET</button>
+    </div>
+    
 </div>
         </form>
     </div>

@@ -1,8 +1,392 @@
 *{
     box-sizing:border-box;
+     font-family: 'Space Mono', monospace;
 }
 
 
 body{
-    font-family: 'Space Mono', monospace;
+    
+    font-size: 1rem;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-color: #c4e4e7;
+}
+
+.cont{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    
+     
+    margin: 0 auto;
+}
+
+#form{
+    background-color: #fff;
+    height: max-content;
+}
+
+.money{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.money-tit, .tip-tit, .pep-tit{
+    color:#5f797b;
+}
+
+.logo{
+    margin: 0 auto;
+}
+
+ 
+
+.money-box, .pep-box{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+background-color: #f3f8fb;
+border-radius: 7px;
+}
+
+.tup-btn{
+    background-color: #00474b;
+    color: #fff;
+    border: none;
+ 
+}
+
+.custom{
+    background-color: #f3f8fb;
+    color:#547573;
+    text-align: center;
+}
+
+.button-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ 
+.dol-inp, .pepNum{
+    color: #075254;
+    background-color: transparent;
+    text-align: end;
+     
+}
+
+input, button{
+    border: none;
+      border-radius: 5px;
+}
+
+.right{
+    background-color: #00474b;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.right-tit{
+color: #fff;
+}
+
+.per-txt{
+    color: #77969a;
+}
+
+.amount, .total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.am-inp, .to-inp{
+    height: max-content;
+    text-align: end;
+    background-color: transparent;
+    color:#26c2ad;
+}
+
+.tip{ 
+    width: 100%;
+}
+
+.reset{
+    background-color: #26c2ad;
+    color: #00494e;;
+    font-weight: bold;
+}
+
+.left-tot, .left-amount{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 30%;
+
+}
+
+.pepText-box{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+   
+    justify-content: space-between;
+}
+.err-txt{
+    color: red;
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .cont{
+        margin-top: 4rem;
+        max-width: 480px;
+    }
+
+    #form{
+        width: 100%;
+        margin-top: 3rem;
+        height: 100%;
+        padding: 1rem 1rem 3rem;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
+
+    .dol-inp, .pepNum{
+        width: 20%;
+       font-size: 1.1rem;
+    }
+
+    .money-box, .pep-box{
+        padding:0.7rem;
+        margin-bottom: 2rem;
+    }
+
+    .custom, .tup-btn{
+         height: 50px;
+        width: 45%;
+        font-size: 1.05rem;
+    }
+
+    .button-box{
+         gap: 0.4rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        
+         
+    }
+
+    .right{
+        margin-top: 3rem;
+        padding:1rem 0.8rem 1.5rem;
+    }
+
+    .to-inp, .am-inp{
+        height: 50px;
+        font-size: 1.4rem;
+        width:30%;
+        
+    }
+
+     .per-txt{
+        font-size: 0.9rem;
+       
+     }
+
+     .left-tot, .left-amount{
+        line-height: 0px;
+     }
+
+     .total{
+        margin: 2rem 0;
+     }
+
+     .reset{
+        height: 50px;
+        font-size: 1.2rem;
+      
+     }
+    .money-tit, .tip-tit, .pep-tit,.err-txt{
+        font-size: 0.85rem;
+    }
+     .left-amount{
+        min-width:20ch ;
+    }
+     
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .cont{
+        margin-top: 4rem;
+         width: 550px;
+    }
+
+    #form{
+        width: 100%;
+        margin-top: 3rem;
+        height: 100%;
+        padding: 1rem 1rem 3rem;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
+
+    .dol-inp, .pepNum{
+        width: 20%;
+       font-size: 1.2rem;
+    }
+
+    .money-box, .pep-box{
+        padding:0.7rem;
+        margin-bottom: 2.2rem;
+    }
+
+    .custom, .tup-btn{
+         height: 60px;
+        width: 25%;
+        font-size: 1.1rem;
+    }
+
+    .button-box{
+         gap: 0.7rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        
+         
+    }
+
+    .right{
+        margin-top: 3rem;
+        padding:1rem 1.3rem 1.5rem;
+    }
+
+    .to-inp, .am-inp{
+        height: 50px;
+        font-size: 1.4rem;
+        width:30%;
+        
+    }
+
+     .per-txt{
+        font-size: 1rem;
+       
+     }
+
+     .right-tit{
+        font-size: 1.2rem;
+     }
+
+     .left-tot, .left-amount{
+        line-height: 0px;
+     }
+
+     .total{
+        margin: 2rem 0;
+     }
+
+     .reset{
+        height: 50px;
+        font-size: 1.3rem;
+      
+     }
+    
+     
+}
+
+@media screen and (min-width: 1025px) {
+    .cont{
+        margin-top: 4rem;
+         width: 900px;
+    }
+
+    #form{
+        width: 100%;
+        margin-top: 3rem;
+        height: 100%;
+        padding: 2rem 1rem 1rem;
+        border-radius: 25px;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-around;
+        height: max-content;
+    }
+
+    .dol-inp, .pepNum{
+        width: 20%;
+       font-size: 1.1rem;
+    }
+
+    .money-box, .pep-box{
+        padding:0.7rem;
+        margin-bottom: 2rem;
+    }
+
+    .custom, .tup-btn{
+         height: 50px;
+        width: 30%;
+        font-size: 1.05rem;
+    }
+
+    .button-box{
+         gap: 0.4rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        
+         
+    }
+
+    .right{
+        padding:1rem 0.8rem 1.5rem;
+        width: 40%;
+        height: 420px;
+     justify-content: space-between;
+    }
+
+    .to-inp, .am-inp{
+        height: 50px;
+        font-size: 2rem;
+        width:30%;
+        
+    }
+
+     .per-txt{
+        font-size: 0.9rem;
+       
+     }
+
+     .left-tot, .left-amount{
+        line-height: 0px;
+     }
+
+    .left-amount{
+        min-width:20ch ;
+    }
+
+     
+
+     .reset{
+        height: 50px;
+        font-size: 1.3rem;
+      
+     }
+
+     .input-box{
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+     }
+    
+     
+     
 }
