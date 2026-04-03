@@ -108,13 +108,19 @@ color: #fff;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    
 }
 
 .am-inp, .to-inp{
     height: max-content;
-    text-align: end;
+    
     background-color: transparent;
     color:#26c2ad;
+}
+
+.dol-ic{
+   color:#26c2ad; 
 }
 
 .tip{ 
@@ -145,6 +151,19 @@ color: #fff;
 .err-txt{
     color: red;
     display: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.amount-box, .total-box{
+    display: flex;
+    width: max-content;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
 }
 
 
@@ -195,9 +214,15 @@ color: #fff;
     .to-inp, .am-inp{
         height: 50px;
         font-size: 1.4rem;
-        width:30%;
+        width:100px;
         
     }
+
+    .dol-ic{
+        font-size: 1.4rem;
+    }
+
+    
 
      .per-txt{
         font-size: 0.9rem;
@@ -210,6 +235,7 @@ color: #fff;
 
      .total{
         margin: 2rem 0;
+       
      }
 
      .reset{
@@ -275,6 +301,10 @@ color: #fff;
         font-size: 1.4rem;
         width:30%;
         
+    }
+
+    .dol-ic{
+        font-size: 1.4rem;
     }
 
      .per-txt{
@@ -354,9 +384,13 @@ color: #fff;
 
     .to-inp, .am-inp{
         height: 50px;
-        font-size: 2rem;
-        width:30%;
-        
+        font-size: 1.7rem;
+        width:40%;
+     
+    }
+
+    .dol-ic{
+        font-size: 1.7rem;
     }
 
      .per-txt{
@@ -388,5 +422,7 @@ color: #fff;
      }
     
      
-     
+     .am-inp{
+         width: 80%;
+     }
 }
