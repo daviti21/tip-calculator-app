@@ -1,72 +1,76 @@
-const form = document.querySelector("#form") as HTMLFormElement;
-const reset = document.querySelector(".reset") as HTMLButtonElement
-
+ 
 const moneyInp = document.querySelector(".dol-inp") as HTMLInputElement;
 const pepNum = document.querySelector(".pepNum") as HTMLInputElement;
 const amountInp = document.querySelector(".am-inp") as HTMLInputElement;
 const totalInp = document.querySelector(".to-inp") as HTMLInputElement;
 const customInp = document.querySelector(".custom") as HTMLInputElement;
+const reset = document.querySelector(".reset") as HTMLButtonElement;
 
-const btn5 = document.querySelector("#btn5") as HTMLButtonElement;
-const btn10 = document.querySelector("#btn10") as HTMLButtonElement;
-const btn15 = document.querySelector("#btn15") as HTMLButtonElement;
-const btn25 = document.querySelector("#btn25") as HTMLButtonElement;
-const btn50 = document.querySelector("#btn50") as HTMLButtonElement;
+const buttonsArr = document.querySelectorAll<HTMLButtonElement>(".tup-btn");
+
+ 
+let currentTip = 0;
+
+ 
+function calculateTip() {
+  const money = parseFloat(moneyInp.value) || 0;
+  const people = parseFloat(pepNum.value) || 1;
+
+  if (currentTip === 0) return;
+
+  const totalTip = money * (currentTip / 100);
+  const tipPerPerson = totalTip / people;
+  const totalPerPerson = (money + totalTip) / people;
+
+  amountInp.value = tipPerPerson.toFixed(2);
+  totalInp.value = totalPerPerson.toFixed(2);
+}
  
  
- 
- 
- function calculateTip(tipPerecent: number){
-   const moneyQuantity: number = parseFloat(moneyInp.value);
- const pepQuantity: number = parseFloat(pepNum.value) || 1
-
-  const total: number = moneyQuantity * (tipPerecent / 100);
-  const amount:number = total / pepQuantity;
-  const totalPerPerson:number = (moneyQuantity + total) / pepQuantity;
-totalInp.value = totalPerPerson.toFixed(2)
-  amountInp.value =  amount.toFixed(2)
-   
- }
-
- btn5.addEventListener("click", () => calculateTip(5));
- btn10.addEventListener("click", () => calculateTip(10));
- btn15.addEventListener("click", () => calculateTip(15));
- btn25.addEventListener("click", () => calculateTip(25));
- btn50.addEventListener("click", () => calculateTip(50));
- 
-  customInp.addEventListener("input", () => {
-       const value = customInp.value;
-
-    if (value === "") return;  
-
-    const customQuantity = parseFloat(value);
-    calculateTip(customQuantity);
-     buttonsArr.forEach(b => {
-    b.classList.remove("active");
-    b.style.backgroundColor = "#00474b";
-    b.style.color = "#fff";
-  });
-  })
-
-  const buttonsArr = document.querySelectorAll<HTMLButtonElement>(".tup-btn");
-  buttonsArr.forEach(btn => {
+buttonsArr.forEach(btn => {
   btn.addEventListener("click", () => {
-     
-    buttonsArr.forEach(b => {
-      b.classList.remove("active");
-      b.style.backgroundColor = "#00474b"; 
-      b.style.color = "#fff";               
-    });
-
+  
+    buttonsArr.forEach(b => b.classList.remove("active"));
      
     btn.classList.add("active");
-    btn.style.backgroundColor = "#24c4ad"; 
-    btn.style.color = "#00474b";
+
+    customInp.value = "";
+
+    const percent = parseFloat(btn.textContent || "0");
+    currentTip = percent;
+
+    calculateTip();
   });
 });
-  
  
+
  
- reset.addEventListener("click", () => {
-      window.location.reload()
-})
+customInp.addEventListener("input", () => {
+  const value = customInp.value;
+
+ 
+  buttonsArr.forEach(b => b.classList.remove("active"));
+
+  if (value === "") return;
+
+  currentTip = parseFloat(value);
+  calculateTip();
+});
+
+ 
+moneyInp.addEventListener("input", calculateTip);
+
+ 
+pepNum.addEventListener("input", calculateTip);
+
+ 
+reset.addEventListener("click", () => {
+  moneyInp.value = "";
+  pepNum.value = "";
+  customInp.value = "";
+  amountInp.value = "0.00";
+  totalInp.value = "0.00";
+  currentTip = 0;
+
+  buttonsArr.forEach(b => b.classList.remove("active"));
+});

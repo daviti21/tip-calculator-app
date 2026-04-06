@@ -79,10 +79,22 @@ border-radius: 7px;
     text-align: end;
      
 }
-
+input{
+    outline: none;
+}
 input, button{
     border: none;
       border-radius: 5px;
+}
+.tup-btn {
+  background-color: #00474b;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.tup-btn.active {
+  background-color: #24c4ad;
+  color: #00474b;
 }
 
 .right{

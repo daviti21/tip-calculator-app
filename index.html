@@ -1,73 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tip calculator app</title>
-    <link href="style.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator App</title>
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="cont">
-      <img src="logo.svg" class="logo">
-        <form id="form">
-            <div class="left"> 
-            <div class="money">
-                <p class="money-tit">Bill</p>
-                <div class="money-box">
-                    <img src="icon-dollar.svg" class="dollar">
-                    <input type="number" inputmode="numeric" pattern="[0-9]*" class="dol-inp" value="0.00">
-                </div>
+  <div class="cont">
+    <img src="logo.svg" class="logo">
+
+    <form id="form">
+      <div class="left">
+
+        <div class="money">
+          <p class="money-tit">Bill</p>
+          <div class="money-box">
+            <img src="icon-dollar.svg" class="dollar">
+            <input type="number" class="dol-inp" value="0">
+          </div>
+        </div>
+
+        <div class="tip">
+          <p class="tip-tit">Select Tip %</p>
+          <div class="button-box">
+            <button type="button" class="tup-btn" data-tip="5">5%</button>
+            <button type="button" class="tup-btn" data-tip="10">10%</button>
+            <button type="button" class="tup-btn" data-tip="15">15%</button>
+            <button type="button" class="tup-btn" data-tip="25">25%</button>
+            <button type="button" class="tup-btn" data-tip="50">50%</button>
+            <input type="number" class="custom" placeholder="Custom">
+          </div>
+        </div>
+
+        <div class="people">
+          <div class="pepText-box">
+            <p class="pep-tit">Number of People</p>
+            <p class="err-txt">Can't be zero</p>
+          </div>
+          <div class="pep-box">
+            <img src="icon-person.svg">
+            <input type="number" class="pepNum" value="1">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="right">
+        <div class="input-box">
+
+          <div class="amount">
+            <div class="left-amount">
+              <p class="right-tit">Tip Amount</p>
+              <p class="per-txt">/ person</p>
             </div>
-            <div class="tip">
-                <p class="tip-tit">Select Tip %</p>
-                <div class="button-box">
-                    <button type="button" class="tup-btn" id="btn5">5%</button>
-                    <button type="button" class="tup-btn" id="btn10">10%</button>
-                    <button type="button" class="tup-btn" id="btn15">15%</button>
-                    <button type="button" class="tup-btn" id="btn25">25%</button>
-                    <button type="button" class="tup-btn" id="btn50">50%</button>
-                      <input type="number" inputmode="numeric" pattern="[0-9]*" class="custom" placeholder="Custom" >
-                </div>
+            <div class="amount-box">
+              <span class="dol-ic">$</span>
+              <input type="text" value="0.00" class="am-inp" readonly>
             </div>
-            <div class="people">
-                <div class="pepText-box">
-                <p class="pep-tit">Number of People</p>
-                <p class="err-txt">Cant't be zero</p>
-                </div>
-                <div class="pep-box">
-                    <img src="icon-person.svg">
-                    <input type="number" inputmode="numeric" pattern="[0-9]*" class="pepNum" value="1">
-                </div>
+          </div>
+
+          <div class="total">
+            <div class="left-tot">
+              <p class="right-tit">Total</p>
+              <p class="per-txt">/ person</p>
             </div>
-</div>
-<div class="right">
-    <div class="input-box">
-    <div class="amount">
-        <div class="left-amount">
-            <p class="right-tit">Tip Amount</p>
-            <p class="per-txt">/ person</p>
+            <div class="total-box">
+              <span class="dol-ic">$</span>
+              <input type="text" value="0.00" class="to-inp" readonly>
+            </div>
+          </div>
+
         </div>
-        <div class="amount-box">
-             <span class="dol-ic">$</span><input type="number" inputmode="numeric" pattern="[0-9]*"  value="0.00" class="am-inp" readonly>
-        </div>
-    </div>
-    <div class="total">
-         <div class="left-tot">
-            <p class="right-tit">Total</p>
-            <p class="per-txt">/ person</p>
-        </div>
-        <div class="total-box"> 
-            <span class="dol-ic">$</span><input  type="number" inputmode="numeric" pattern="[0-9]*"  value="0.00" class="to-inp" readonly>
-        </div>
-    </div>
-    </div>
-     <button type="button" class="reset">RESET</button>
-    </div>
-    
-</div>
-        </form>
-    </div>
-    <script src="app.js"></script>
+
+        <button type="button" class="reset">RESET</button>
+      </div>
+
+    </form>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
